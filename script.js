@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     const getModeBtn = document.getElementById('getModeBtn');
     const addDataSection = document.getElementById('addDataSection');
     const getDataSection = document.getElementById('getDataSection');
+    const addResult = document.getElementById('addResult');
+    const getResult = document.getElementById('getResult');
     
     addModeBtn.addEventListener('click', () => switchMode('add'));
     getModeBtn.addEventListener('click', () => switchMode('get'));
@@ -15,11 +17,15 @@ document.addEventListener('DOMContentLoaded', async function() {
             getModeBtn.classList.remove('active');
             addDataSection.style.display = 'block';
             getDataSection.style.display = 'none';
+            addResult.style.display = 'block';
+            getResult.style.display = 'none';
         } else {
             addModeBtn.classList.remove('active');
             getModeBtn.classList.add('active');
             addDataSection.style.display = 'none';
             getDataSection.style.display = 'block';
+            addResult.style.display = 'none';
+            getResult.style.display = 'block';
         }
     }
 
@@ -49,10 +55,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         try {
             const result = await node.add(content);
-            document.getElementById('addResult').textContent = `Content added. CID: ${result.path}`;
+            addResult.textContent = `Content added. CID: ${result.path}`;
         } catch (error) {
             console.error('Error adding content to IPFS:', error);
-            document.getElementById('addResult').textContent = 'Error adding content to IPFS. Check console for details.';
+            addResult.textContent = 'Error adding content to IPFS. Check console for details.';
         }
     });
 
@@ -66,10 +72,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 for await (const chunk of stream) {
                     data += new TextDecoder().decode(chunk);
                 }
-                document.getElementById('getResult').textContent = data;
+                getResult.textContent = data;
             } catch (error) {
                 console.error('Error retrieving data from IPFS:', error);
-                document.getElementById('getResult').textContent = 'Error: Content not found or invalid CID.';
+                getResult.textContent = 'Error: Content not found or invalid CID.';
             }
         } else {
             alert('Please enter a CID.');

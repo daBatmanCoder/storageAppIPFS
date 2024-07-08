@@ -15,17 +15,22 @@
             <button id="getModeBtn">Get Data</button>
         </div>
         
-        <div id="addDataSection">
-            <textarea id="textInput" placeholder="Enter text to add to IPFS..."></textarea>
-            <button id="uploadFileBtn">Upload File Instead</button>
-            <input type="file" id="fileInput" style="display: none;">
-            <button id="addButton">Add to IPFS</button>
-            <div id="addResult"></div>
+        <div class="content-area">
+            <div id="addDataSection">
+                <textarea id="textInput" placeholder="Enter text to add to IPFS..."></textarea>
+                <button id="uploadFileBtn">Upload File Instead</button>
+                <input type="file" id="fileInput" style="display: none;">
+                <button id="addButton">Add to IPFS</button>
+            </div>
+            
+            <div id="getDataSection" style="display: none;">
+                <input type="text" id="hashInput" placeholder="Enter CID">
+                <button id="getDataButton">Get Data</button>
+            </div>
         </div>
         
-        <div id="getDataSection" style="display: none;">
-            <input type="text" id="hashInput" placeholder="Enter CID">
-            <button id="getDataButton">Get Data</button>
+        <div id="resultArea">
+            <div id="addResult"></div>
             <div id="getResult"></div>
         </div>
     </div>

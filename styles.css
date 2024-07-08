@@ -21,6 +21,7 @@ body {
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .mode-selector {
@@ -40,6 +41,10 @@ h1 {
 .mode-selector button.active {
     background-color: #E74C3C;
     color: white;
+}
+
+.content-area {
+    min-height: 200px; /* Adjust as needed */
 }
 
 textarea, input[type="text"] {
@@ -70,10 +75,15 @@ button:hover {
     background-color: #C0392B;
 }
 
-#addResult, #getResult {
+#resultArea {
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    min-height: 100px; /* Adjust as needed */
     word-break: break-all;
+}
+
+#addResult, #getResult {
+    display: none;
 }
