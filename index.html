@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPFS Storage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/ipfs/dist/index.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>IPFS Storage</h1>
+        <div class="mode-selector">
+            <button id="addModeBtn" class="active">Add Data</button>
+            <button id="getModeBtn">Get Data</button>
+        </div>
+        
+        <div id="addDataSection">
+            <textarea id="textInput" placeholder="Enter text to add to IPFS..."></textarea>
+            <button id="uploadFileBtn">Upload File Instead</button>
+            <input type="file" id="fileInput" style="display: none;">
+            <button id="addButton">Add to IPFS</button>
+            <div id="addResult"></div>
+        </div>
+        
+        <div id="getDataSection" style="display: none;">
+            <input type="text" id="hashInput" placeholder="Enter CID">
+            <button id="getDataButton">Get Data</button>
+            <div id="getResult"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
